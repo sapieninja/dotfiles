@@ -61,6 +61,9 @@ map <leader>d :YcmCompleter GetDoc<CR>
 map <leader>o :only<CR>
 set undofile
 set undodir=~/.vim/undodir
+set tabstop=4
+set shiftwidth=4
+set expandtab
 "abbreviations for simple text issues
 :abbreviate teh the
 :abbreviate prnt print
