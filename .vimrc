@@ -1,3 +1,4 @@
+" my .vimrc
 set nocompatible
 filetype off
 set number relativenumber
