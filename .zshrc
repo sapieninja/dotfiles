@@ -8,7 +8,7 @@ export ZSH="/home/max/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="daveverwer"
+ZSH_THEME="agnoster"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -59,8 +59,7 @@ HYPHEN_INSENSITIVE="true"
 # You can set one of the optional three formats:
 # "mm/dd/yyyy"|"dd.mm.yyyy"|"yyyy-mm-dd"
 # or set a custom format using the strftime function format specifications,
-# see 'man strftime' for details.
-# HIST_STAMPS="mm/dd/yyyy"
+# see 'man strftime' for details.  # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
@@ -70,12 +69,7 @@ HYPHEN_INSENSITIVE="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
-plugins=(zsh-autosuggestions)
-plugins=(z zsh-autosuggestions)
-plugins=(git z zsh-autosuggestions)
-
-
+plugins=(git z zsh-autosuggestions sudo)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -104,7 +98,14 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # load zgen
-CODESTATS_API_KEY="SFMyNTY.YzJGd2FXVnVhVzVxWVE9PSMjTVRNNE1qUT0.g0QjCq6dgiVq-Aov9SxNDJZzhEoVxlF6ksFS4WzW-QQ"
+if [[ "${hostname}" == "maxdesktop" ]]
+then
+	CODESTATS_API_KEY="SFMyNTY.YzJGd2FXVnVhVzVxWVE9PSMjTVRNNE1qTT0._xU00YBWQDNj5EgIkpp8TjQfs6QZzBYG8pq5Kj-12Rs"
+fi
+if [[ "${hostname}" == "max" ]]
+then 
+	CODESTATS_API_KEY="SFMyNTY.YzJGd2FXVnVhVzVxWVE9PSMjTVRNNE1qUT0.g0QjCq6dgiVq-Aov9SxNDJZzhEoVxlF6ksFS4WzW-QQ"
+fi
 source "${HOME}/.zgen/zgen.zsh"
 # if the init script doesn't exist
 if ! zgen saved; then
