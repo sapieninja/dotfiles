@@ -19,10 +19,14 @@ Plug 'https://gitlab.com/code-stats/code-stats-vim.git'
 " Optional: If you want a nice status line in Vim
 Plug 'vim-airline/vim-airline'
 Plug 'lervag/vimtex'
-
 call plug#end()
+let hostname = substitute(system('hostname'), '\n', '', '')
+if hostname == "max"
+    let g:codestats_api_key = 'SFMyNTY.YzJGd2FXVnVhVzVxWVE9PSMjTVRNNE1qUT0.g0QjCq6dgiVq-Aov9SxNDJZzhEoVxlF6ksFS4WzW-QQ'
+elseif hostname == "maxdesktop"
+    let g:codestats_api_key = 'SFMyNTY.YzJGd2FXVnVhVzVxWVE9PSMjTVRNNE1qTT0._xU00YBWQDNj5EgIkpp8TjQfs6QZzBYG8pq5Kj-12Rs'
+endif
 " REQUIRED: set your API key
-let g:codestats_api_key = 'SFMyNTY.YzJGd2FXVnVhVzVxWVE9PSMjTVRNNE1qTT0._xU00YBWQDNj5EgIkpp8TjQfs6QZzBYG8pq5Kj-12Rs'
 
 " Optional: configure vim-airline to display status
 let g:airline_section_x = airline#section#create_right(['tagbar', 'filetype', '%{CodeStatsXp()}'])
