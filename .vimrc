@@ -18,6 +18,7 @@ Plug 'https://gitlab.com/code-stats/code-stats-vim.git'
 
 " Optional: If you want a nice status line in Vim
 Plug 'vim-airline/vim-airline'
+Plug 'preservim/nerdtree'
 Plug 'lervag/vimtex'
 call plug#end()
 let hostname = substitute(system('hostname'), '\n', '', '')

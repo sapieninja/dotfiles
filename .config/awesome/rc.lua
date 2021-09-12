@@ -19,7 +19,6 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 require("awful.hotkeys_popup.keys")
 
 -- Load Debian menu entries
-local debian = require("debian.menu")
 local has_fdo, freedesktop = pcall(require, "freedesktop")
 
 -- {{{ Error handling
@@ -106,7 +105,6 @@ else
     mymainmenu = awful.menu({
         items = {
                   menu_awesome,
-                  { "Debian", debian.menu.Debian_menu.Debian },
                   menu_terminal,
                 }
     })
@@ -285,6 +283,8 @@ globalkeys = gears.table.join(
               {description = "jump to urgent client", group = "client"}),
     awful.key({ "Control", "Shift"}, "s", function() awful.spawn(terminal.. " -e khal --color interactive") end,
               {description = "Opens calendar", group = "client"}),
+    awful.key({ modkey,           }, "o", function()  awful.util.spawn("rofi -modi 'drun,window,ssh' -show drun -show-icons -width 22 -no-click-to-exit", false) end,
+              {description = "Opens rofi", group = "client"}),
     awful.key({ modkey,           }, "Tab",
         function ()
             awful.client.focus.history.previous()
