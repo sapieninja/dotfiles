@@ -18,6 +18,7 @@ Plug 'https://gitlab.com/code-stats/code-stats-vim.git'
 
 " Optional: If you want a nice status line in Vim
 Plug 'vim-airline/vim-airline'
+Plug 'arcticicestudio/nord-vim'
 Plug 'preservim/nerdtree'
 Plug 'lervag/vimtex'
 call plug#end()
@@ -41,7 +42,7 @@ let &t_SI = "\<Esc>[6 q"
 let &t_SR = "\<Esc>[4 q"
 let &t_EI = "\<Esc>[2 q"
 let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree
-
+colorscheme nord
 let python_highlight_all=1
 syntax on
 filetype indent plugin on

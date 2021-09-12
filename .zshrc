@@ -115,3 +115,4 @@ if ! zgen saved; then
   zgen save
 fi
 alias config='/usr/bin/git --git-dir=/home/max/.cfg/ --work-tree=/home/max'
+alias r="rifle"
