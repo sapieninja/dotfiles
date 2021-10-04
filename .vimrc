@@ -18,10 +18,20 @@ Plug 'https://gitlab.com/code-stats/code-stats-vim.git'
 
 " Optional: If you want a nice status line in Vim
 Plug 'vim-airline/vim-airline'
+Plug 'vim-denops/denops.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'preservim/nerdtree'
 Plug 'lervag/vimtex'
+Plug 'vimsence/vimsence'
+Plug 'sirver/ultisnips'
+"Plug 'honza/vim-snippets'
 call plug#end()
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<c-b>'
+let g:UltiSnipsJumpBackwardTrigger = '<c-z>'
+setlocal spell
+set spelllang=en_gb
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
 let hostname = substitute(system('hostname'), '\n', '', '')
 if hostname == "max"
     let g:codestats_api_key = 'SFMyNTY.YzJGd2FXVnVhVzVxWVE9PSMjTVRNNE1qUT0.g0QjCq6dgiVq-Aov9SxNDJZzhEoVxlF6ksFS4WzW-QQ'
@@ -58,13 +68,6 @@ let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 let g:matchup_override_vimtex = 1
 set conceallevel=2
-let g:tex_conceal='abdmgs'
-let g:UltiSnipsExpandTrigger = '<tab>'
-let g:UltiSnipsJumpForwardTrigger = '<tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-map <leader>d :YcmCompleter GetDoc<CR>
-map <leader>o :only<CR>
 set undofile
 set undodir=~/.vim/undodir
 set tabstop=4
@@ -77,3 +80,4 @@ set expandtab
 :abbreviate het the
 :abbreviate hte the
 hi clear Conceal
+set belloff=all

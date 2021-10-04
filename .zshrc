@@ -1,7 +1,6 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
 export ZSH="/home/max/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
@@ -9,7 +8,6 @@ export ZSH="/home/max/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="daveverwer"
-nitrogen --restore
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -23,6 +21,7 @@ nitrogen --restore
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
 HYPHEN_INSENSITIVE="true"
+nitrogen --restore >> /dev/null 2>&1
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -109,10 +108,12 @@ if ! zgen saved; then
 
   # specify plugins here
   zgen oh-my-zsh
-  zgen code-stats-zsh
+#  zgen code-stats-zsh
 
   # generate the init script from plugins above
   zgen save
 fi
 alias config='/usr/bin/git --git-dir=/home/max/.cfg/ --work-tree=/home/max'
 alias r="rifle"
+alias vim="nvim"
+export PATH="$HOME/.local/bin:$PATH"

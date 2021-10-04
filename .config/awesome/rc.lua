@@ -587,4 +587,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 awful.util.spawn_with_shell("nitrogen --restore")
 awful.util.spawn_with_shell("pgrep -u $USER -x nm-applet > /dev/null || (nm-applet &)")
+awful.util.spawn_with_shell("pgrep -u $USER -x kmix > /dev/null || (kmix &)")
+awful.util.spawn_with_shell("pgrep -u $USER -x blueman-applet > /dev/null || (kmix &)")
 awful.util.spawn_with_shell("setxkbmap gb")
+awful.util.spawn_with_shell("endlessh -v > ~/Programming/endlessh/endlessh.log 2> ~/Programming/endlessh/endlessh.err &")
